@@ -1,0 +1,222 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Background */
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Pop-in animation for container */
+@keyframes popIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Container */
+.todo-container {
+    background-color: #ffffff;
+    width: 420px;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+    animation: popIn 0.5s ease-out;
+}
+
+/* Heading */
+.todo-container h4 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 22px;
+}
+
+/* Dark Mode Toggle */
+.dark-toggle {
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: #222;
+    color: white;
+    padding: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.dark-toggle:hover {
+    background-color: #000;
+}
+
+/* Input */
+.todo-container input {
+    width: 100%;
+    padding: 11px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.3s;
+}
+
+.todo-container input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 8px rgba(102, 126, 234, 0.4);
+}
+
+/* Buttons */
+.todo-container button {
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    padding: 7px 14px;
+    transition: all 0.25s ease;
+}
+
+/* Add Button */
+.add-btn {
+    width: 100%;
+    background-color: #667eea;
+    color: #fff;
+    margin-top: 12px;
+}
+
+.add-btn:hover {
+    background-color: #5563d6;
+    transform: translateY(-2px);
+}
+
+/* List */
+.todo-container ul {
+    list-style: none;
+    margin-top: 15px;
+}
+
+/* Slide-in animation for todo items */
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* List Item */
+.todo-container li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f4f6fb;
+    padding: 9px 12px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    animation: slideIn 0.3s ease;
+}
+
+/* Task Text */
+.todo-text {
+    flex: 1;
+    font-size: 14px;
+    color: #333;
+    transition: 0.3s;
+}
+
+/* Done Task */
+.done {
+    text-decoration: line-through;
+    color: gray;
+    transform: scale(0.95);
+}
+
+/* Delete Button */
+.delete-btn {
+    background-color: #ff5c5c;
+    color: #fff;
+}
+
+.delete-btn:hover {
+    background-color: #e74c3c;
+    transform: scale(1.1);
+}
+
+/* Done Button */
+.done-btn {
+    background-color: #2ecc71;
+    color: #fff;
+    margin-left: 6px;
+}
+
+.done-btn:hover {
+    background-color: #27ae60;
+    transform: scale(1.1);
+}
+
+/* Mark All Button */
+.mark-all {
+    width: 100%;
+    margin-top: 12px;
+    background-color: #333;
+    color: #fff;
+}
+
+.mark-all:hover {
+    background-color: #111;
+    transform: translateY(-2px);
+}
+
+/* ================= Dark Mode ================== */
+.todo-container.dark {
+    background-color: #1e1e2f;
+    color: #fff;
+}
+
+.todo-container.dark h4 {
+    color: #fff;
+}
+
+.todo-container.dark input {
+    background-color: #2a2a3d;
+    color: #fff;
+    border-color: #444;
+}
+
+.todo-container.dark input::placeholder {
+    color: #aaa;
+}
+
+.todo-container.dark li {
+    background-color: #2a2a3d;
+}
+
+.todo-container.dark .todo-text {
+    color: #fff;
+}
+
+.todo-container.dark .done {
+    color: #aaa;
+}
+
+.todo-container.dark .add-btn {
+    background-color: #5a6cff;
+}
+
+.todo-container.dark .mark-all {
+    background-color: #444;
+}
+
+/* Edit button */
+.edit-btn {
+    background-color: #3498db; /* Blue color */
+    color: #fff;
+    margin-left: 5px;
+}
+
+.edit-btn:hover {
+    background-color: #2980b9;
+    transform: scale(1.1);
+}
